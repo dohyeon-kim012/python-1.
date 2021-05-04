@@ -1,0 +1,500 @@
+Python 3.9.4 (tags/v3.9.4:1f2e308, Apr  6 2021, 13:40:21) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+>>> a = int(input('정수 입력 : '))
+정수 입력 : 100
+>>> a = int(input('정수 입력 : '))
+정수 입력 : 500
+>>> city = input('어디서 오셨나요 : ')
+어디서 오셨나요 : 연주암
+>>> city
+'연주암'
+>>> a = float(input('실수 입력 : '))
+실수 입력 : 20.5478
+>>> a
+20.5478
+>>> print(a, city)
+20.5478 연주암
+>>> 
+>>> 
+>>> print(' aa \t bb \t cc \n dd \t ee \a ff \b gg')
+ aa 	 bb 	 cc 
+ dd 	 ee  ff  gg
+>>> print("서울은 좁아요" "아주 좁아요" "정말 좁아요")
+서울은 좁아요아주 좁아요정말 좁아요
+>>> print("서울은 좁아요 \t\t " "아주 좁아요 \n" "정말 좁아요")
+서울은 좁아요 		 아주 좁아요 
+정말 좁아요
+>>> age = 20
+>>> name = 'Bill Gates'
+>>> print(name, 'is ', age, 'years old')
+Bill Gates is  20 years old
+>>> print(' %s, %d ' %(name, age))
+ Bill Gates, 20 
+>>> 
+>>> print(' [%d] ]%10d] [$-10d] '%(5, 5, 5))
+Traceback (most recent call last):
+  File "<pyshell#22>", line 1, in <module>
+    print(' [%d] ]%10d] [$-10d] '%(5, 5, 5))
+TypeError: not all arguments converted during string formatting
+>>> print(' [%d] [%10d] [%-10d] '%(5, 5, 5))
+ [5] [         5] [5         ] 
+>>> 
+>>> print(' {} {} '.format(10, 'seoul'))
+ 10 seoul 
+>>> 
+>>> print(' {} {} {} '.format(10, 3.14, 'seoul'))
+ 10 3.14 seoul 
+>>> print(' {} {} {} '.format(3.14, 'seoul'))
+Traceback (most recent call last):
+  File "<pyshell#28>", line 1, in <module>
+    print(' {} {} {} '.format(3.14, 'seoul'))
+IndexError: Replacement index 2 out of range for positional args tuple
+>>> 
+>>> print(' [{:20}] [{:10}] [{:<20}] ' .format(10, 30, 'seoul'))
+ [                  10] [        30] [seoul               ] 
+>>> print(' [{:20}] [{:^10}] [{:<20}] ' .format(10, 30, 'seoul'))
+ [                  10] [    30    ] [seoul               ] 
+>>> print(' [{:>20}] [{:%f}] [{:<20}] ' .format(10, 30, 'seoul'))
+Traceback (most recent call last):
+  File "<pyshell#33>", line 1, in <module>
+    print(' [{:>20}] [{:%f}] [{:<20}] ' .format(10, 30, 'seoul'))
+ValueError: Invalid format specifier
+>>> print(' [{:>20}] [{:.10f}] [{:<20}] ' .format(10, 30, 'seoul'))
+ [                  10] [30.0000000000] [seoul               ] 
+>>> print(' [{:>20}] [{:.10f}] [{:<20}] ' .format(10, 3.14, 'seoul'))
+ [                  10] [3.1400000000] [seoul               ] 
+>>> print(' [{:>20}] [{:.10f}] [{:<20}] ' .format(10, , 'seoul'))
+SyntaxError: invalid syntax
+>>> print(' {:2f}, %.2f, %.10f' % (2.13, 2.13, 2.13))
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    print(' {:2f}, %.2f, %.10f' % (2.13, 2.13, 2.13))
+TypeError: not all arguments converted during string formatting
+>>> print(' %f, %.2f, %.10f' % (2.13, 2.13, 2.13))
+ 2.130000, 2.13, 2.1300000000
+>>> 
+>>> 
+>>> Sum = 0
+>>> range(10)
+range(0, 10)
+>>> range(1, 11)
+range(1, 11)
+>>> for i in range(10):
+	print(i)
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> for i in range(10):
+	print(i, end - \t')
+	      
+SyntaxError: unexpected character after line continuation character
+>>> for i in range(5, 100, 5):
+	print(i)
+
+	
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+>>> for i in range(5, 100, 5):
+	print(i, end - "  ")
+
+	
+Traceback (most recent call last):
+  File "<pyshell#61>", line 2, in <module>
+    print(i, end - "  ")
+NameError: name 'end' is not defined
+>>> for i in range(5, 100, 5):
+	print(i, end = "  ")
+
+	
+5  10  15  20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95  
+>>> for i in range(10, 500, 10):
+	print(i, end = "  ")
+
+	
+10  20  30  40  50  60  70  80  90  100  110  120  130  140  150  160  170  180  190  200  210  220  230  240  250  260  270  280  290  300  310  320  330  340  350  360  370  380  390  400  410  420  430  440  450  460  470  480  490  
+>>> 
+>>> 
+>>> Sum = 0
+>>> for i in range(1, 11):
+	Sum = Sum + i
+
+	
+>>> Sum
+55
+>>> for i in range(1, 101)
+SyntaxError: invalid syntax
+>>> for i in range(1, 101):
+	Sum = Sum + i
+
+	
+>>> print(Sum)
+5105
+>>> for i in range(1, 101, 2):
+	Sum = Sum + i
+
+	
+>>> Sum
+7605
+>>> 
+>>> 
+>>> Sum2 = 0.0
+>>> for i in range(100):
+	Sum = Sum +0.1
+
+	
+>>> Sum
+7615.000000000036
+>>> for i in range(100):
+	Sum = Sum2 +0.1
+
+	
+>>> Sum
+0.1
+>>> for i in range(100):
+	Sum2 = Sum2 +0.1
+
+	
+>>> Sum2
+9.99999999999998
+>>> print('[ %f ] %(Sum2))
+      
+SyntaxError: EOL while scanning string literal
+>>> print('[ %f ]' %(Sum2))
+[ 10.000000 ]
+>>> print('[ %.30f ]' %(Sum2))
+[ 9.999999999999980460074766597245 ]
+>>> 
+>>> f = open('c:\\db\\aa.txt', 'r', encoding='utf8')
+>>> print(f.read())
+오늘은 화요일
+비가 옵니다.
+내일은 나의 날입니다.
+>>> f2 = open('c:\\db\\bb.txt', 'w', encoding='utf8')
+>>> f2.write('파이썬은 짱입니다. \n')
+12
+>>> f2.write('위의 말은 사실입니다. \n')
+14
+>>> f.close()
+>>> f2.close()
+>>> f3 = open('c:\\db\\bb.txt', 'a', encoding='utf8')
+>>> for i in range(5):
+	name = input('friends name : ')
+	f3.write(name); f3.write('\n')
+
+	
+friends name : Tschick
+7
+1
+friends name : Michael
+7
+1
+friends name : Tatjana
+7
+1
+friends name : Andrea
+6
+1
+friends name : Angela
+6
+1
+>>> f3.close()
+>>> 
+>>> 
+Python 3.9.4 (tags/v3.9.4:1f2e308, Apr  6 2021, 13:40:21) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> chr('a')
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    chr('a')
+TypeError: an integer is required (got type str)
+>>> ord('A')
+65
+>>> ord('B')
+66
+>>> ord('a')
+97
+>>> ord('b')
+98
+>>> import keyword
+>>> keyword.kwlist
+['False', 'None', 'True', '__peg_parser__', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+>>> k1 = 30
+>>> k2 = 20
+>>> k3 = 30
+>>> k1 is k3
+True
+>>> k1 is k2
+False
+>>> k1 is 30
+True
+>>> k1 is not 30
+False
+>>> a = [1, 2, 3, 4]
+>>> 3 in a
+True
+>>> 3 not in a
+False
+>>> 3 < 3
+False
+>>> 3 <= 3
+True
+>>> 3 <= 3 and 4 == 4
+True
+>>> 3 <= 3 and 4 == 5
+False
+>>> 3 <= 3 or 4 == 5
+True
+>>> str(1000)
+'1000'
+>>> int('3333')
+3333
+>>> int(3333)
+3333
+>>> str('1000')
+'1000'
+>>> float(45)
+45.0
+>>> float('people')
+Traceback (most recent call last):
+  File "<pyshell#36>", line 1, in <module>
+    float('people')
+ValueError: could not convert string to float: 'people'
+>>> a = [2, 4, 6, 8, 10]
+>>> b = (1, 2, 3)
+>>> type(a)
+<class 'list'>
+>>> type(b)
+<class 'tuple'>
+\n [ ] is list, ( ) is tuple \n
+>>> sum(a)
+30
+>>> sum(b)
+6
+>>> max(a)
+10
+>>> min(b)
+1
+>>> dir(a)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> k = 20
+>>> dir(k)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> dir(int)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> k+30
+50
+>>> k.__add__(30)
+50
+>>> k == 60
+False
+>>> k.__eq__(60)
+False
+>>> k.__ne__(60)
+True
+>>> k != 60
+True
+>>> 
+>>> 
+>>> k = "korea"
+>>> type(k)
+<class 'str'>
+>>> k(0)
+Traceback (most recent call last):
+  File "<pyshell#62>", line 1, in <module>
+    k(0)
+TypeError: 'str' object is not callable
+>>> k[0]
+'k'
+>>> k[1]
+'o'
+>>> k[5]
+Traceback (most recent call last):
+  File "<pyshell#65>", line 1, in <module>
+    k[5]
+IndexError: string index out of range
+>>> k[-1]
+'a'
+>>> k[-2]
+'e'
+>>> k[-5]
+'k'
+>>> k
+'korea'
+>>> k.find('k')
+0
+>>> k.find('o')
+1
+>>> k.find('T')
+-1
+>>> k.rfind('T')
+-1
+>>> k.rfind('k')
+0
+>>> k2 = k + 3
+Traceback (most recent call last):
+  File "<pyshell#75>", line 1, in <module>
+    k2 = k + 3
+TypeError: can only concatenate str (not "int") to str
+>>> k2 = k * 3
+>>> k2
+'koreakoreakorea'
+>>> k2.find('a')
+4
+>>> k2.rfind('a')
+14
+>>> k2.count('a')
+3
+>>> k2.count('o')
+3
+>>> k2.cound('R')
+Traceback (most recent call last):
+  File "<pyshell#82>", line 1, in <module>
+    k2.cound('R')
+AttributeError: 'str' object has no attribute 'cound'
+>>> k2.count('R')
+0
+>>> k2.count('e')
+3
+>>> k2
+'koreakoreakorea'
+>>> k2.upper()
+'KOREAKOREAKOREA'
+>>> k2
+'koreakoreakorea'
+>>> k3 = k2.upper()
+>>> k3
+'KOREAKOREAKOREA'
+>>> k3.lower()
+'koreakoreakorea'
+>>> s = '  seoul  '
+>>> s
+'  seoul  '
+>>> k
+'korea'
+>>> k2
+'koreakoreakorea'
+>>> len(k)
+5
+>>> len(k2)
+15
+>>> len(s)
+9
+>>> s.strip()
+'seoul'
+>>> s.lstrip()
+'seoul  '
+>>> s.rstrip()
+'  seoul'
+>>> 'T'.isalpha()
+True
+>>> '0'.isalpha()
+False
+>>> '5'.isalpha()
+False
+>>> '$'.isalpha()
+False
+>>> '$'.isnumeric()
+False
+>>> 'A'.isnumeric()
+False
+>>> '6'. isalnum()
+True
+>>> 'A'.isalnum()
+True
+>>> s = "seoul"
+>>> print(s, "가 좋아요")
+seoul 가 좋아요
+>>> s.replace('e', 'E')
+'sEoul'
+>>> s
+'seoul'
+>>> b = '서울이 좋아요'
+>>> b1 = '서울이 좋아요'
+>>> b1.replace("서울", "부산")
+'부산이 좋아요'
+>>> bc = "kbs mbc sbs ebs ytn"
+>>> bc
+'kbs mbc sbs ebs ytn'
+>>> bc2 = bc.upper()
+>>> bc2
+'KBS MBC SBS EBS YTN'
+>>> type(bc)
+<class 'str'>
+>>> type(bc2)
+<class 'str'>
+>>> bc3 = bc2.split()
+>>> bc3
+['KBS', 'MBC', 'SBS', 'EBS', 'YTN']
+>>> type(bc3), len(bc3)
+(<class 'list'>, 5)
+>>> bc4 = "kbs/mbc/sbs"
+>>> bc4
+'kbs/mbc/sbs'
+>>> bc5 = bc4.split('/')
+>>> bc5
+['kbs', 'mbc', 'sbs']
+>>> bc4 = "kbs:mbc:sbs"
+>>> bc4
+'kbs:mbc:sbs'
+>>> bc5=bc4.split(':')
+>>> bc5
+['kbs', 'mbc', 'sbs']
+>>> a = "apple"
+>>> a + 4
+Traceback (most recent call last):
+  File "<pyshell#144>", line 1, in <module>
+    a + 4
+TypeError: can only concatenate str (not "int") to str
+>>> a * 3
+'appleappleapple'
+>>> b = "banana"
+>>> b
+'banana'
+>>> a + b
+'applebanana'
+>>> b * 4
+'bananabananabananabanana'
+>>> k2.startswith('k')
+True
+>>> '7'.isnumeric()
+True
+>>> k2.startswith('R')
+False
+>>> k2.endswith('a')
+True
+>>> d = 1345
+>>> d.startswith(1)
+Traceback (most recent call last):
+  File "<pyshell#155>", line 1, in <module>
+    d.startswith(1)
+AttributeError: 'int' object has no attribute 'startswith'
+>>> '7'.isnumeric()
+True
+>>> 
