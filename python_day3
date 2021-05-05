@@ -1,0 +1,648 @@
+Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__']
+>>> Sum
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    Sum
+NameError: name 'Sum' is not defined
+>>> a
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    a
+NameError: name 'a' is not defined
+>>> aa
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    aa
+NameError: name 'aa' is not defined
+>>> del Sum, i, j, k, k2, k3, s, bc5, bc4, bc3, bc2, bc1, aa, a
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    del Sum, i, j, k, k2, k3, s, bc5, bc4, bc3, bc2, bc1, aa, a
+NameError: name 'Sum' is not defined
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__']
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+>>> 30 / 2
+15.0
+>>> 30 / 0
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    30 / 0
+ZeroDivisionError: division by zero
+>>> help(print)
+Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+
+>>> print("aa" "bb" "cc")
+aabbcc
+>>> print("aa" "bb" "cc", sep='')
+aabbcc
+>>> print("aa" "bb" "cc", sep=' ', end = '\n')
+aabbcc
+>>> a = "aa"
+>>> b = "bb"
+>>> c = "cc"
+>>> print(a, b, c)
+aa bb cc
+>>> print(a, b, c, end = '\t')
+aa bb cc	
+>>> print("aa", end = '\n')
+aa
+>>> print("bb", end = '\n')
+bb
+>>> print("cc", end = '
+      
+SyntaxError: EOL while scanning string literal
+>>> print("cc", end = '\n')
+cc
+>>> print("aa", end = '\t')
+aa	
+>>> print("bb", end = '\t')
+bb	
+>>> print("cc", end = '\t')
+cc	
+>>> help(str)
+
+>>> abs(-45)
+45
+>>> abs(-4.44445)
+4.44445
+>>> all([3, 4, 5, 6])
+True
+>>> bool(1) #값이 오르면 무조건 참
+True
+>>> bool(31)
+True
+>>> bool(3.1)
+True
+>>> bool('kkk')
+True
+>>> bool(None)
+False
+>>> bool(0)
+False
+>>> bool(0.0)
+False
+>>> bool([])
+False
+>>> bool(())
+False
+>>> bool({})
+False
+>>> a = [2, 5, 9, 5, 0]
+>>> a
+[2, 5, 9, 5, 0]
+>>> all(a)
+False
+>>> b = [1, 3, 4]
+>>> b
+[1, 3, 4]
+>>> all(b)
+True
+>>> any(a)
+True
+>>> aa = [2, 0, 0.0, None, []]
+>>> any(aa)
+True
+>>> \n 내장 함수 종류
+SyntaxError: unexpected character after line continuation character
+>>> \n 내장 함수 종류\n
+SyntaxError: unexpected character after line continuation character
+>>> \n 내장 함수 종류 \n
+SyntaxError: unexpected character after line continuation character
+>>> #내장 함수 종류
+>>> #__add__: magic method
+>>> a = 50
+>>> a * 5
+250
+>>> a + 5
+55
+>>> a.__add__(5)
+55
+>>> a + 10
+60
+>>> a.__add__(10)
+60
+>>> #문자와 숫자가 1:1 대응되는 코드
+>>> chr(65)
+'A'
+>>> chr(66)
+'B'
+>>> chr(67)
+'C'
+>>> chr(97)
+'a'
+>>> chr(98)
+'b'
+>>> chr(48)
+'0'
+>>> chr(49)
+'1'
+>>> ord('A')
+65
+>>> ord('D')
+68
+>>> a - 50
+0
+>>> a = 50
+>>> type(a)
+<class 'int'>
+>>> dir(a)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> #인코딩(encode) vs 디코딩(decode)
+>>> ord('A')
+65
+>>> ord('B')
+66
+>>> '\uac00'
+'가'
+>>> '\uac01'
+'각'
+>>> '\uac02'
+'갂'
+>>> '\uac03'
+'갃'
+>>> '\uad7a3'
+'굺3'
+>>> '\ud7a3'
+'힣'
+>>> ord('?')
+63
+>>> ord('가')
+44032
+>>> hex(ord('가'))
+'0xac00'
+>>> chr(55203)
+'힣'
+>>> chr(44032)
+'가'
+>>> ord('愛')
+24859
+>>> 촉(24859)
+Traceback (most recent call last):
+  File "<pyshell#90>", line 1, in <module>
+    촉(24859)
+NameError: name '촉' is not defined
+>>> chr(24859)
+'愛'
+>>> ord('히라가나 마')
+Traceback (most recent call last):
+  File "<pyshell#92>", line 1, in <module>
+    ord('히라가나 마')
+TypeError: ord() expected a character, but string of length 6 found
+>>> ord('히라가나마')
+Traceback (most recent call last):
+  File "<pyshell#93>", line 1, in <module>
+    ord('히라가나마')
+TypeError: ord() expected a character, but string of length 5 found
+>>> chr(12414)
+'ま'
+>>> a = '1234'
+>>> ord('1')
+49
+>>> ord('2')
+50
+>>> ord('3')
+51
+>>> a
+'1234'
+>>> b = "boss'"
+>>> b
+"boss'"
+>>> c = "한국인"
+>>> a
+'1234'
+>>> b
+"boss'"
+>>> c
+'한국인'
+>>> type(a)
+<class 'str'>
+>>> type(b)
+<class 'str'>
+>>> type(c)
+<class 'str'>
+>>> len(a)
+4
+>>> len(b)
+5
+>>> len(c)
+3
+>>> for i in a:
+	print(i)
+
+	
+1
+2
+3
+4
+>>> for i in b:
+	print(i)
+
+	
+b
+o
+s
+s
+'
+>>> for i in c:
+	print(i)
+
+	
+한
+국
+인
+>>> a.encode()
+b'1234'
+>>> aa = a.encode()
+>>> aa
+b'1234'
+>>> type(aa)
+<class 'bytes'>
+>>> type(A)
+Traceback (most recent call last):
+  File "<pyshell#126>", line 1, in <module>
+    type(A)
+NameError: name 'A' is not defined
+>>> type(a)
+<class 'str'>
+>>> bb = b.encode()
+>>> bb
+b"boss'"
+>>> cc = c.encode()
+>>> cc
+b'\xed\x95\x9c\xea\xb5\xad\xec\x9d\xb8'
+>>> c
+'한국인'
+>>> a
+'1234'
+>>> len(a), len(aa)
+(4, 4)
+>>> b
+"boss'"
+>>> len(b), len(bb)
+(5, 5)
+>>> len(c)
+3
+>>> c
+'한국인'
+>>> len(cc)
+9
+>>> a[0], a[2]
+('1', '3')
+>>> b[0]
+'b'
+>>> c[0]
+'한'
+>>> aa[0]
+49
+>>> a
+'1234'
+>>> aa
+b'1234'
+>>> aa[2]
+51
+>>> bb
+b"boss'"
+>>> bb[0]
+98
+>>> cc[0]
+237
+>>> cc[2]
+156
+>>> for i in a:
+	print(i)
+
+	
+1
+2
+3
+4
+>>> for i in aa:
+	print(i)
+
+	
+49
+50
+51
+52
+>>> for i in bb:
+	print(i)
+
+	
+98
+111
+115
+115
+39
+>>> for i in cc:
+	print(i)
+
+	
+237
+149
+156
+234
+181
+173
+236
+157
+184
+>>> a, aa
+('1234', b'1234')
+>>> b, bb
+("boss'", b"boss'")
+>>> c
+'한국인'
+>>> cc
+b'\xed\x95\x9c\xea\xb5\xad\xec\x9d\xb8'
+>>> aa.decode()
+'1234'
+>>> aa
+b'1234'
+>>> bb.decode()
+"boss'"
+>>> cc.encode()
+Traceback (most recent call last):
+  File "<pyshell#170>", line 1, in <module>
+    cc.encode()
+AttributeError: 'bytes' object has no attribute 'encode'
+>>> cc.decode()
+'한국인'
+>>> "좋아요"
+'좋아요'
+>>> "좋아요".encode()
+b'\xec\xa2\x8b\xec\x95\x84\xec\x9a\x94'
+>>> j = "좋아요".encode()
+>>> ㅓ
+Traceback (most recent call last):
+  File "<pyshell#175>", line 1, in <module>
+    ㅓ
+NameError: name 'ᅥ' is not defined
+>>> j
+b'\xec\xa2\x8b\xec\x95\x84\xec\x9a\x94'
+>>> j.decode()
+'좋아요'
+>>> k = "korea"
+>>> type(k)
+<class 'str'>
+>>> k.encode()
+b'korea'
+>>> k1 = k.encode()
+>>> k1
+b'korea'
+>>> for i in k1:
+	print(i)
+
+	
+107
+111
+114
+101
+97
+>>> k1
+b'korea'
+>>> k2 = k1.decode()
+>>> k2
+'korea'
+>>> type(k2)
+<class 'str'>
+>>> type(k1)
+<class 'bytes'>
+>>> 
+>>> 
+>>> chr(90)
+'Z'
+>>> chr(100)
+'d'
+>>> ord('A')
+65
+>>> while True:
+	c = input("한 문자 입력: ")
+	if c == '0':
+		break
+	print(c, "==>", ord(C))
+	#한글, 한자, 테스트 해보기
+
+	
+한 문자 입력: 김
+Traceback (most recent call last):
+  File "<pyshell#202>", line 5, in <module>
+    print(c, "==>", ord(C))
+NameError: name 'C' is not defined
+>>> while True:
+	c = int(input("정수 입력:"))
+	if c == '0':
+		break
+	print(c, "==>
+	      
+SyntaxError: EOL while scanning string literal
+>>> while True:
+	c = int(input("정수 입력:"))
+	if c == '0':
+		break
+	print(c, "==>", chr(c))
+
+	
+정수 입력:0
+0 ==> 
+정수 입력:1
+1 ==> 
+정수 입력:2
+2 ==> 
+정수 입력:3
+3 ==> 
+정수 입력:4
+4 ==> 
+정수 입력:5
+5 ==> 
+정수 입력:6
+6 ==> 
+정수 입력:7
+7 ==> 
+정수 입력:8
+8 ==> 
+정수 입력:9
+9 ==> 	
+정수 입력:
+Traceback (most recent call last):
+  File "<pyshell#209>", line 2, in <module>
+    c = int(input("정수 입력:"))
+ValueError: invalid literal for int() with base 10: ''
+>>> 
+>>> for i in range(65,91):
+	print(i, "==>", chr(j))
+
+	
+Traceback (most recent call last):
+  File "<pyshell#213>", line 2, in <module>
+    print(i, "==>", chr(j))
+TypeError: an integer is required (got type bytes)
+>>> for i in range(65,91):
+	print(i, "==>", chr(i))
+
+	
+65 ==> A
+66 ==> B
+67 ==> C
+68 ==> D
+69 ==> E
+70 ==> F
+71 ==> G
+72 ==> H
+73 ==> I
+74 ==> J
+75 ==> K
+76 ==> L
+77 ==> M
+78 ==> N
+79 ==> O
+80 ==> P
+81 ==> Q
+82 ==> R
+83 ==> S
+84 ==> T
+85 ==> U
+86 ==> V
+87 ==> W
+88 ==> X
+89 ==> Y
+90 ==> Z
+>>> k = [chr(i) for i in range(65,91)]
+>>> k
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+>>> len(k)
+26
+>>> k[0]
+'A'
+>>> k[1]
+'B'
+>>> k[2]
+'C'
+>>> for i in k:
+	print(i)
+
+	
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+>>> for i in k:
+	print(i, end = ")
+	      
+SyntaxError: EOL while scanning string literal
+>>> 
+>>> ###도움말 보기
+>>> dir()
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'aa', 'b', 'bb', 'c', 'cc', 'i', 'j', 'k', 'k1', 'k2']
+d
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+>>> help()
+
+Welcome to Python 3.9's help utility!
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at https://docs.python.org/3.9/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, symbols, or topics, type
+"modules", "keywords", "symbols", or "topics".  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as "spam", type "modules spam".
+
+help> symbols
+
+Here is a list of the punctuation symbols which Python assigns special meaning
+to. Enter any symbol to get more help.
+
+!=                  +                   <=                  __
+"                   +=                  <>                  `
+"""                 ,                   ==                  b"
+%                   -                   >                   b'
+%=                  -=                  >=                  f"
+&                   .                   >>                  f'
+&=                  ...                 >>=                 j
+'                   /                   @                   r"
+'''                 //                  J                   r'
+(                   //=                 [                   u"
+)                   /=                  \                   u'
+*                   :                   ]                   |
+**                  <                   ^                   |=
+**=                 <<                  ^=                  ~
+*=                  <<=                 _                   
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               break               for                 not
+None                class               from                or
+True                continue            global              pass
+__peg_parser__      def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+>>> 
+>>> 
+>>> # 2장 핵심 정리
+● 정수 4칙연산 : +, -, *, /
+● // 정수/정수 = 정수 몫을 구함, % 나머지를 구함
+● ** 제곱승을 구함 2 ** 3 == pow(2, 3)
+● 문자열 +은 연산은 문자열 연결, *은 문자열 연속, -, / 연산은 불가
+● 실수는 부동소수점 처리, 8바이트(64비트)로 실수 처리. 정밀도 한계가 존재
+● python 3.9 버전은 68개의 빌트인 함수(builtin function) 제공
+● 문자열을 다루는 다양한 메서드(method) 제공
+● 인코딩 : 문자열을 바이트열로 변경
+● 디코딩 : 바이트열을 문자열로 변경
+● help()함수는 도움말을 보여준다. #
+SyntaxError: invalid character '●' (U+25CF)
+>>> 
