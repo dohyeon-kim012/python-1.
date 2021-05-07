@@ -1,0 +1,277 @@
+## 사용자 정의 함수
+
+def f1():  ## 함수 정의
+    pass   ## 아무 일도 하지 않음
+
+def f2():
+    print('f2...')
+
+def f3(x):
+    print(x, '가 좋아요')
+
+def f4(x, y):
+    print('{} + {} = {}'.format(x, y, x+y))
+
+def plus(x, y):
+    print('{} + {} = {}'.format(x, y, x+y)) 
+    return None
+
+def minus(x, y):
+    return x-y
+
+f1()  ## 함수 호출
+f2()
+f3(100)
+f3(100, 3) - 오류
+f3('BTS')
+f4(100, 200)
+plus(200, 300)
+retv = minus(300, 200)
+print(retv)
+print('20 - 5 = ', minus(20, 5))
+
+
+## 덧셈만 할 줄 아는 계산기(1)
+
+while True:
+    number1 = int(input('첫 번째 수 : '))
+    if number1 == 0:
+        break
+    number2 = int(input('두 번째 수 : '))
+
+    print('{} + {} = {}'.format(number1, number2, number1 + number2))
+
+
+## 덧셈만 할 줄 아는 계산기(2)
+
+def plus(x, y):
+    print('{} + {} = {}'.format(x, y, x+y))
+    return None
+
+def Add(x, y):
+    return x+y
+
+while True:
+    number1 = int(input('첫 번째 수 : '))
+    if number1 == 0:
+        break
+    number2 = int(input('두 번째 수 : '))
+
+    plus(number1, number2)
+
+    retv = Add(number1, number2)
+    print('{} + {} = {}'.format(number1, number2, number1 + number2))
+
+
+## 프로그램 구조 익히기
+
+def Talk(x, y):
+    print(x, '님이', y, '번 말씀하셨다.')
+
+def Aha(x):
+    print(x,'. 누구나 딱 한 번 산다고')
+
+print('Start')
+
+name = input('이름 : ')
+num = int(input('횟수 : '))
+
+for i in range(1, num+1):
+    Aha(i)
+
+Talk(name, num)
+
+#Talk('정자')-구버전 #함수 호출
+
+print('End')
+
+
+## 사칙연산 가능한 간단 계산기
+
+def Add(x, y):
+    return x+y
+
+def Sub(x, y):
+    return x-y
+
+def Mul(x, y):
+    return x*y
+
+def Div(x, y):
+    return x//y
+
+while True:
+    print('** 초간단 계산기 **')
+    n1 = int(input('첫 번째 수: '))
+    if n1 == 0:
+        break
+    
+    op = input('[ + - * / ]: ')
+        
+    n2 = int(input('두 번째 수: '))
+
+    if op == '+':
+        res = Add(n1, n2)
+    elif op == '-':
+        res = Sub(n1, n2)
+    elif op == '*':
+        res = Mul(n1, n2)
+    elif op == '/':
+        res = Div(n1, n2)
+    else:
+        print(op, '없는 연산입니다')
+
+    print('{} {} {} = {}'.format(n1, op, n2, res))
+
+    #'n1 =, op =, n2 =' 에서 입력받음
+    #'op ='에서 입력받으면 it, elif 함수로 값이 넘어가서 'res ='에서 함수 호출
+    # 호출 후 'print ='에서 결과 출력함
+
+
+## 가변인수 (인수의 개수가 달라질 수 있다)
+
+def 함수2(인수1, 인수2):
+    print(인수1, 인수2)
+
+함수2('korea', 'seoul')
+
+
+def Add1(x):
+    print(x+x)
+
+def Add2(x, y):
+    print(x+y)
+
+def Add3(x=100, y=100, z=100):
+    ''나는 값을 더하는 함수이다'' # doc string
+    print('x =', x, 'y =', y, 'z =', z)
+
+def Call(name = 'Elsa'):
+    print(name, 'Do you wanna build a Snowman?')
+
+Call()
+Call('Anna')
+Call(name='Olaf')
+
+Add3(10, 20, 30)
+Add3(30, 50)
+Add3(10)
+Add3()
+Add3(z=5, x=7, y=3)
+
+
+## 6-1-1 함수의 기본
+
+def Fun1():
+    pass
+
+def Fun2():
+    print("Fun2입니다.")
+
+def Fun3(x):
+    print("Fun3입니다.")
+
+def Fun4(x, y):
+    for i in range(y):
+        print(x, "님 반가워요.")
+
+def Fun5(x):
+    return x*x
+
+def Add(number1, number2):
+    print("{} + {} = {}".format(number1, number2, number1+number2))
+    return 5, 10, 300
+
+
+## 6-1-4 함수의 기본 - 정의
+
+def fun1():
+    print('fun1 함수 입니다')
+def fun2(x):
+    print(id(x))
+    for i in range(x):
+        print('{}번째 fun2함수 호출'.format(i+1))
+def fun3(x, y):
+    print('{} + {} = {}'.format(x,y,x+y))
+
+def fun4(x, y, z):
+    print('{} + {} + {} = {}'.format(x,y,z,x+y+z))
+    return None
+
+def fun5():
+    pass
+
+def fun6():
+    return 500, 50, 5
+
+def fun7(x,y):
+    return x+y
+
+
+## 함수 출력 (5교시)
+
+def Disp(name = '만수르'):
+    print(name, '님은 돈이 많아요')
+
+#Disp()
+#Disp('정용진')
+
+def Disp2(x):
+    for i in x:
+        print(i)
+
+def Disp3(x): 
+    print(x)
+
+def Disp4(*x):  ## list의 개별값이 tuple 형태로 전달
+    for i in x:
+        print(i, end = '  ')
+
+def SUM(x):
+    s = 0
+    for i in x:
+        s = s + i
+    return s
+
+def SUM100(*x):  # *a의 SUM을 프린트하기 위한 라인
+    s = 0
+    for i in x:
+        s = s + i
+    return s
+
+a = [3, 6, 9]
+
+print(SUM(a))
+print(SUM([1, 2, 3, 4, 5, 6]))
+
+print(SUM100(*a))
+# 중요! 빌트인 함수명은 허용되나, def 함수에 사용하면 안 된다.!(기존 함수를 덮어씌워 버림)
+
+
+color = {'black':'schwarz', 'yellow':'gelb', 'blue':'blau'}
+
+def disp_color(**x):
+    for key, value in x.items():
+        print(key, value)
+    print(x['black'], x['yellow'], x['blue'])
+
+disp_color(**color)
+
+
+## 2개의 gg 출력해보기(지역변수, 전역변수)
+
+gg = 500
+
+def f1(x):
+    global gg   #지역변수 gg(200)을 전역변수로 변경함
+    gg = 200
+    print(gg, 'x ==>', x*x)
+
+def f2(x, y):
+    t = x*y   # t는 지역변수, f2함수 내에서만 통용됨
+    print(gg, t)
+
+f1(10)
+print('gg ==>', gg)
+f2(100, 300)
+print('gg ==>', gg)
