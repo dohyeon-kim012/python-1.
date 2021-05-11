@@ -1,0 +1,132 @@
+## class Man ver.1
+
+class Man(object):
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return 'his name is {}. he is {} years old'.format(self.name, self.age)
+
+    def __add__(self, num):
+        self.age = self.age + num
+
+    def __sub__(self, num):
+        self.age -= num
+
+    def disp_Man(self):
+        print('his name is {}. he is {} years old'.format(self.name, self.age))
+   
+    def get_name(self):
+        return self.name
+    
+    def get_age(self):
+        return self.age
+
+    def set_name(self, name):
+        self.name = name
+
+    def set_age(self, age):
+        self.age = age
+
+man1 = Man('Olaf', 20)
+man2 = Man('Prince Charming', 30)
+
+man1 + 12
+man2 - 4
+
+## print ver.1
+print(man1)
+print(man2)
+
+## print ver.2
+man1.disp_Man()
+man2.disp_Man()
+
+## print ver.3
+print('his name is', man1.get_name(), 'he is', man1.get_age(), 'years old')
+
+------------------------------------------------------------------------------
+
+## class Man ver.2
+
+CUR_YEAR = 2021  # 전역변수
+
+class Date(object):  # object를 상속받음: object는 1. 최상위 클래스, 2. 클래스에서 만들어진 instance
+                     # (object)는 지워도 됨(이미 생략되어 있음)
+    def __init__(self, year, month):
+        self.year = year
+        self.month = month
+        print('Date __init__')
+        
+    def Call_age(self, year):
+        return CUR_YEAR - year + 1
+
+    def disp_Date(self):
+        print('{}년 {}월'.format(self.year, self.month))
+
+    def __del__(self):
+        print('Date __del__')
+
+class Man(Date):  ## Date class를 상속받음
+    cnt = 0  ## class 변수
+
+    @staticmethod  # 장식자
+    def get_cnt1():
+        return Man.cnt
+
+    @classmethod  # class 전체에 포함되어 있는 method
+    def get_cnt2(cls):  # cls라는 인수로 받음
+        return Man.cnt
+
+    ## 객체 생성시 자동 호출되는 함수, 생성자(constructor)
+    def __init__(self, name, year, month):
+        Date.__init__(self, year, month)
+        self.name = name
+        self.age = CUR_YEAR - year + 1
+        Man.cnt += 1
+        #print('Man __init__')
+
+    #def Call_age(self, year):
+    #    return CUR_YEAR - year + 1
+
+    ## 객체 소멸시 자동 호출되는 함수, 소멸자(destructor)
+    def __del__(self):
+        Man.cnt -= 1
+        super().__del__()
+        print('Man __del__')
+
+    ## 객체 출력시 자동으로 호출되는 함수, 기본값은 객체의 id 값 리턴
+    def __str__(self):
+        return 'His name is {}, he is {} years old'.format(self.name, self.age)
+        ## == print(m1.__Str__()) , print(m2.__str__())
+
+    ## 원래 있는 함수인데 다시 만들었음 --> method 재정의(override)
+    def __eq__(self, other):
+        if self.name == other.name and self.age == other.age:
+            return True
+        else: 
+            return False
+
+    def disp_Man(self):
+        print('His name is {}, he is {} years old'.format(self.name, self.age))
+        Date.disp_Date(self) ## Date class(부모클래스)의 method 호출
+
+print('현재 객체생성수는: {}'.format(Man.cnt))
+print('현재 객체생성수는: {}'.format(Man.get_cnt1()))
+
+m1 = Man('Olaf', 2018, 12)
+m2 = Man('Prince Charming', 1994, 1)
+m3 = Man('Olaf', 2018, 12)
+
+print('현재 객체생성수는: {}'.format(Man.cnt))
+print('현재 객체생성수는: {}'.format(m1.get_cnt2()))
+
+print(m1)
+print(m2)
+
+print(m1 == m3)
+
+#m1.disp_Man()
+#m2.disp_Man()
