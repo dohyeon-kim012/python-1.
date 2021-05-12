@@ -1,0 +1,203 @@
+## 파워쉘에서 작업
+> cd ..파이썬 설치 경로로 이동 
+> pyinstaller -F final.py
+## 경로로 이동해 보면 dist 폴더 아래에
+final.exe 파일이 존재함
+이 파일을 외부로 복사한 후 클릭하면 실행 가능 
+
+▶ 파워쉘에서 실행 
+> pip freeze # 설치 확인 
+> mkdir c:\\last
+> cd c:\\last
+> django-admin startproject MyPro #프로젝트 생성 
+> cd MyPro #경로 이동 
+> django-admin startapp MyApp #App 생성 
+
+비주얼	스튜디오	코드에서	폴더	열기	
+▶ MyPro/settings.py 파일 수정 
+# 두 줄 수정 104, 106 라인 
+LANGUAGE_CODE = 'ko-kr' TIME_ZONE = 'Asia/Seoul' > python.exe manage.py runserver 
+#브라우저에서 확인 http://127.0.0.1:8000
+
+▶ MyPro/urls.py 파일 수정 
+FROM django.contrib import admin
+FROM django.urls import path
+FROM MyApp import views
+urlpatterns = [
+ path('admin/', admin.site.urls), path('', views.index), ]
+ 
+▶ MyApp/views.py 파일 수정 
+FROM django.http import HttpResponse
+def index(request): return HttpResponse("<body bgcolor=green text=white><h1><hr><br>고맙습니다 <br><hr>")
+
+
+
+## time 함수 사용법
+
+>>> import time as t
+>>> print(t.time())
+1620785923.8780477
+>>> print(t.time())
+1620785933.5022485
+>>> print(t.time())
+1620785937.8823009
+>>> t1 = t.gmtime()
+>>> print('{}/{}/{}'.format(t1.tm_year, t1.tm_mon, t1.tm_mday))
+2021/5/12
+>>> print('{}/{}/{}'.format(t1.tm_hour, t1.tm_min, t1.tm_sec))
+2/27/34
+>>> print('{}시{}분{}초'.format(t1.tm_hour, t1.tm_min, t1.tm_sec))
+2시27분34초
+>>> print('{}시{}분{}초'.format(t1.tm_hour, t1.tm_min, t1.tm_sec))
+2시27분34초
+>>> t1.tm_zone
+'UTC'
+>>> print('{}시{}분{}초'.format(t1.tm_hour, t1.tm_min, t1.tm_sec))
+2시27분34초
+>>> t1.tm_zone
+'UTC'
+>>> 
+>>> 
+>>> import datetime as d
+>>> d.datetime.now()
+datetime.datetime(2021, 5, 12, 11, 31, 25, 335392)
+>>> 
+>>> n = d.datetime.now()
+>>> print('{}시{}분{}초'.format(n.hour, n.minute, n.second))
+11시32분48초
+>>> 
+>>> import calendar as cal
+>>> 
+>>> now = cal.calendar(2021)
+>>> print(now)
+                                  2021
+
+      January                   February                   March
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+             1  2  3       1  2  3  4  5  6  7       1  2  3  4  5  6  7
+ 4  5  6  7  8  9 10       8  9 10 11 12 13 14       8  9 10 11 12 13 14
+11 12 13 14 15 16 17      15 16 17 18 19 20 21      15 16 17 18 19 20 21
+18 19 20 21 22 23 24      22 23 24 25 26 27 28      22 23 24 25 26 27 28
+25 26 27 28 29 30 31                                29 30 31
+
+       April                      May                       June
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+          1  2  3  4                      1  2          1  2  3  4  5  6
+ 5  6  7  8  9 10 11       3  4  5  6  7  8  9       7  8  9 10 11 12 13
+12 13 14 15 16 17 18      10 11 12 13 14 15 16      14 15 16 17 18 19 20
+19 20 21 22 23 24 25      17 18 19 20 21 22 23      21 22 23 24 25 26 27
+26 27 28 29 30            24 25 26 27 28 29 30      28 29 30
+                          31
+
+        July                     August                  September
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+          1  2  3  4                         1             1  2  3  4  5
+ 5  6  7  8  9 10 11       2  3  4  5  6  7  8       6  7  8  9 10 11 12
+12 13 14 15 16 17 18       9 10 11 12 13 14 15      13 14 15 16 17 18 19
+19 20 21 22 23 24 25      16 17 18 19 20 21 22      20 21 22 23 24 25 26
+26 27 28 29 30 31         23 24 25 26 27 28 29      27 28 29 30
+                          30 31
+
+      October                   November                  December
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+             1  2  3       1  2  3  4  5  6  7             1  2  3  4  5
+ 4  5  6  7  8  9 10       8  9 10 11 12 13 14       6  7  8  9 10 11 12
+11 12 13 14 15 16 17      15 16 17 18 19 20 21      13 14 15 16 17 18 19
+18 19 20 21 22 23 24      22 23 24 25 26 27 28      20 21 22 23 24 25 26
+25 26 27 28 29 30 31      29 30                     27 28 29 30 31
+
+>>> 
+>>> print(cal.month(2021, 5))
+      May 2021
+Mo Tu We Th Fr Sa Su
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+
+>>> print(cal.month(1994,01))
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+>>> print(cal.month(1994,1))
+    January 1994
+Mo Tu We Th Fr Sa Su
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+
+
+## Flask 모듈 사용해보기
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+	return "<h1><body bgcolor=skyblue text=grey> guten Tag~~</h1>"
+  
+▶명령 프롬프트에서 실행
+> set FLASK_APP=w2.py
+> flask run
+ * running on http://http://127.0.0.1:5000/
+ 
+ 
+ 
+ ## 기상청 사이트에서 날씨 정보 가져오기
+ 
+ from urllib import request as req 
+import datetime as d 
+import bs4
+
+r =	req.urlopen("http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108") 
+
+soup = bs4.BeautifulSoup(r, "html.parser") 
+now	= d.datetime.now()
+
+
+print("=" *	30)
+print("* {}년 {}월 {}일 날씨 정보 * ".format(now.year, now.month, now.day))
+print("=" * 30) 
+print("  도시     날 씨    온  도  ") 
+print("=" * 30) 
+
+for	i in soup.select("location"):				
+    name = i.select_one("city").string				
+    wf   = i.select_one("wf").string				
+    tmn  = i.select_one("tmn").string				
+    tmx	 = i.select_one("tmx").string								
+
+    print("{:>4s} {:>7s} {}도 ~ {}도".format(name, wf, tmn, tmx))
+
+print("=" * 30)
+
+
+
+## 저장한 엑셀파일에서 데이터 값 가져오기
+
+import openpyxl as xl
+
+exf = xl.load_workbook('c:\\db\\day7-4(엑셀파일).xlsx') 
+
+aws = exf.active
+
+for i in aws.rows:
+    index = i[0].row
+    name = i[0].value
+    kor = i[1].value
+    eng = i[2].value
+    mat = i[3].value
+
+    tot = kor + eng + mat
+    avg = tot / 3
+
+    aws.cell(row = index, column = 5).value = tot
+    aws.cell(row = index, column = 6).value = avg
+
+    print('{} {} {} {} {} {:.1f}'.format(name, kor, eng, mat, tot, avg))
+
+exf.save('c:\\db\\day7-5(엑셀파일).xlsx')
+exf.close()
