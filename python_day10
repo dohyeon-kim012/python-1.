@@ -1,0 +1,63 @@
+class Smart(object):
+    cnt = 0
+    def __init__(self, model, color, price):
+        self.model = model
+        self.color = color
+        self.price = price
+        print("Smart __init__")
+
+    def __del__(self):
+        print("Smart __del__")
+
+    def Disp(self):
+        print("모델: ",self.model,"색상: ",self.color,"가격: ",self.price,"원")
+
+s1 = Smart("갤럭시8", "골드", 900000)
+s2 = Smart("아이폰7", "블랙", 950000)
+
+
+===== RESTART: C:/Users/ehgus/OneDrive/바탕 화면/인공지능과정/python/python_class.py =====
+Smart __init__
+Smart __init__
+>>> s1.Disp()
+
+모델:  갤럭시8 색상:  골드 가격:  900000 원
+>>> s2.Disp()
+
+모델:  아이폰7 색상:  블랙 가격:  950000 원
+>>> type(Smart)
+<class 'type'>
+>>> type(s1)
+<class '__main__.Smart'>
+>>> type(s2)
+<class '__main__.Smart'>
+>>> s3 = s1
+>>> s1.Disp()
+모델:  갤럭시8 색상:  골드 가격:  900000 원
+>>> s3.Disp()
+모델:  갤럭시8 색상:  골드 가격:  900000 원
+>>> s1.color = "레드"
+>>> s1.Disp()
+모델:  갤럭시8 색상:  레드 가격:  900000 원
+>>> s3.Disp()
+모델:  갤럭시8 색상:  레드 가격:  900000 원
+>>> id(s1)
+1876342847088
+>>> id(s3)
+1876342847088
+>>> dir()
+['Smart', '__annotations__', '__builtins__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 's1', 's2', 's3']
+>>> del s2
+Smart __del__
+>>> dle s1
+SyntaxError: invalid syntax
+>>> del s1
+>>> s1.Disp()
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    s1.Disp()
+NameError: name 's1' is not defined
+>>> dir()
+['Smart', '__annotations__', '__builtins__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 's3']
+>>> del s3
+Smart __del__
